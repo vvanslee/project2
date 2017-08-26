@@ -155,6 +155,7 @@ p {
   margin-top: 0;
   font-size: 25px;
   font-weight: bold;
+  font-family: 'Encode Sans Semi Condensed', sans-serif;
 
 }
 
@@ -359,11 +360,12 @@ ul,
 ol,
 form {
 
-  margin-bottom: 2.5rem; }
-
-  .login {
-
-  z-index: 20;
+  position: relative !important;
+  float: right !important;
+  margin-bottom: -60px !important;
+  margin-top: 44px !important;
+  margin-right: 100px !important;
+  z-index: 40 !important;
 }
 
 /* Utilities
