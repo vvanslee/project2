@@ -5,7 +5,7 @@ var connection = mysql.createConnection({
   port: 3306, // Must be different from client port (e.g., 3000)
   user:'root',
   password: '',
-  database:'propertyManager_db'
+  database:'kubo_db'
 }); 
  
 module.exports = connection;
