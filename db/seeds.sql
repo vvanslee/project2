@@ -1,0 +1,3 @@
+INSERT INTO Worktickets (TenantID, Subject, Message, Status) VALUES (1, 'Plumbing', 'Hot water not working...', 'Open');
+INSERT INTO Worktickets (TenantID, Subject, Message, Status) VALUES (6, 'Emergency', 'Building is on fire!', 'Pending');
+INSERT INTO Worktickets (TenantID, Subject, Message, Status) VALUES (4, 'Cabinet Door', 'I simply opened the cabinet door and it fell apart. Can you send someone to fix it?', 'Closed');
