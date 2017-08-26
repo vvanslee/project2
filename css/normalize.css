@@ -18,6 +18,7 @@ html {
 
 body {
   margin: 0;
+  padding: 0;
 }
 
 /* HTML5 display definitions
@@ -36,12 +37,28 @@ details,
 figcaption,
 figure,
 footer,
+.leader {
+  position: relative;
+  z-index: 21; 
+}
+.image-container {
+  position: relative; 
+  z-index: 1;
+}
 header,
 hgroup,
 main,
 menu,
 .nav {
-  font-family: 'Encode Sans Semi Condensed', sans-serif;
+  position: fixed;
+  background-color: white;
+  height: 30px;
+  width: 100%;
+  z-index: 1000;
+  /* display: inline-block; */ 
+}
+.main {
+  margin-top: 20px;
 }
 section,
 summary {
@@ -53,8 +70,9 @@ summary {
  * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
  */
 .banner {
+  position: absolute;
+  z-index: 0;
   padding: 0;
-  
   width: 100%;
 }
 audio,
