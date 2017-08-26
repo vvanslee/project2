@@ -1,0 +1,10 @@
+<div class="container-fluid">
+  <div id="title-block">
+    <h1>Welcome TENANT!</h1>
+    <img class="titlePicture" src="/static/images/tpLSD.jpg">
+  </div>
+
+  <div class="ink">
+    {{#each data}}<p>{{this.WTID}}: {{this.TenantID}}, {{this.Subject}}, {{this.Message}}, {{this.Status}}, {{this.Date}}</p>{{/each}}
+  </div>
+</div>

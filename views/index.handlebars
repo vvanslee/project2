@@ -1,0 +1,49 @@
+<div class="container-fluid">
+  <div id="title-block">
+    <h1>Welcome Home!</h1>
+    <img class="titlePicture" src="/static/images/tpLSD.jpg">
+  </div>
+
+  <div class=row-fluid>
+    <div class=col-md-6>
+      <form action="/tenant" method="POST">
+        <button type="submit" id= "tenantBtn"class="btn btn-success btn-lg btn-block">Tenant Login</button>
+      </form>
+    </div>
+    <div class=col-md-6>
+      <form action="/landlord" method="POST">
+        <button type="submit" id= "landlordBtn"class="btn btn-danger btn-lg btn-block">Landlord Login</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="row-fluid">
+    <div class="col-md-12 ink">
+      Existing work tickets:
+    </div>
+  </div>
+
+  {{!-- It may be better to display these in a table format. Bootstrap garbles the displayed data when the screen resizes. --}}
+  <div class="row-fluid">
+    <div class="col-md-1 ink">Work Ticket ID</div>
+    <div class="col-md-1 ink">Tenant ID</div>
+    <div class="col-md-2 ink">Subject</div>
+    <div class="col-md-5 ink">Message</div>
+    <div class="col-md-1 ink">Status</div>
+    <div class="col-md-2 ink">Date Posted</div>
+  </div> 
+
+  <div class="row-fluid">
+    {{#each data}}
+      <div class="col-md-1 ink">{{this.WTID}}</div>
+      <div class="col-md-1 ink">{{this.TenantID}}</div>
+      <div class="col-md-2 ink">{{this.Subject}}</div>
+      <div class="col-md-5 ink">{{this.Message}}</div>
+      <div class="col-md-1 ink">{{this.Status}}</div>
+      <div class="col-md-2 ink">{{this.Date}}</div>
+    {{/each}}
+  </div> 
+
+
+
+</div>
