@@ -68,6 +68,28 @@ orm = {
       console.log(result);
       cb(result);
     });
+  },
+
+  showLLID_PropID: function(tableInput, cb) {
+    console.log("orm.js - showLLID_PropID");
+    console.log(tableInput);
+    var query = 'SELECT * FROM ' + tableInput + ';';
+    connection.query(query, function(err, result) {
+      if (err) throw err;
+      console.log(result);
+      cb(result);
+    });
+  },
+
+  showTentantID_UnitID: function(tableInput, cb) {
+    console.log("orm.js - showTenantID_UnitID");
+    console.log(tableInput);
+    var query = 'SELECT * FROM ' + tableInput + ';';
+    connection.query(query, function(err, restult) {
+      if (err) throw err;
+      console.log(result);
+      cb(result);
+    });
   }
 
 };

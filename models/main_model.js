@@ -39,6 +39,18 @@ var mapping = {
     orm.showNotifications("Notifications", function(res){
       cb(res);
     });
+  },
+
+  toLLID_PropID: function(cb) {
+    orm.showLLID_PropID("LLID_PropID" , function(res){
+      cb(res);
+    });
+  },
+
+  toTenantID_UnitID: function(cb) {
+    orm.showTenantID_UnitID("TentantID_UnitID", function(res){
+      cb(res);
+    });
   }
 
 };
