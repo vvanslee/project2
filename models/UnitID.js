@@ -2,16 +2,16 @@ module.exports = function (sequelize, DataTypes) {
 
     var UnitID = sequelize.define("UnitID", {
         UnitID: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             allowNull: false,
-            primaryKey: TRUE
+            primaryKey: true
         },
         unitName: {
             type: DataTypes.STRING,
             allowNull: true
         },
         PropID: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             allowNull: false
         }
     });

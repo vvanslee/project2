@@ -11,21 +11,21 @@ router.get('/', function(req,res) {
   });
 });
 
-router.post('/tenant', function(req, res){
+/* router.get('/tenant-signin', function(req, res){
   console.log(req.body.id);
   mmodel.toTenant(function(data){
-    console.log(data);
-    res.render('ten', {data});
+    // console.log(data);
+    res.render('tenant-signin', {data});
     // res.redirect('/tenant');
   });
 });
 
-router.post('/landlord', function(req, res) {
+router.get('/landlord-signin', function(req, res) {
   mmodel.toLandlord(function(data){
-    console.log(data);
-    res.render('lan', {data});
+    // console.log(data);
+    res.render('landlord-signin', {data});
     // res.redirect('/landlord');
   });
-}); 
+});  */
 
 module.exports = router;

@@ -1,49 +1,41 @@
-<div class="container-fluid">
-  <div id="title-block">
-    <h1>Welcome Home!</h1>
-    <img class="titlePicture" src="/static/images/tpLSD.jpg">
-  </div>
+<!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class = "nav">
+      KUBO 
+</div>
+   
 
-  <div class=row-fluid>
-    <div class=col-md-6>
-      <form action="/tenant" method="POST">
-        <button type="submit" id= "tenantBtn"class="btn btn-success btn-lg btn-block">Tenant Login</button>
-      </form>
+<div class = "main">
+  <div class = "leader">
+    <div class = "sidebar_spaced">
+      <div class = "form_container">
+        <form>
+          <input class="half-width" type="email" placeholder="test@mailbox.com" id="emailInput">
+          <input class="half-width" type="password" placeholder="•••••••••" id="passwordInput">
+          <input class="button-primary" type="submit" value="Submit" id = "loginButton">
+          <input class="half-width" type="text" placeholder="username" id="usernameInput">
+          <input class="half-width" type="email" placeholder="email" id="emailRegisteredInput">
+          <input class="half-width" type="password" placeholder="•••••••••" id="passwordInput">
+          <input class="half-width" type="text" placeholder="firstname" id="firstNameInput">
+          <input class="half-width" type="text" placeholder="lastname" id="secondNameInput">
+            <select class="half-width" id="tenantLandlordSelector">
+                <option value="Option 1">Landlord</option>
+                <option value="Option 2">Tenant</option>
+              </select>
+            
+            <input class="button-primary" type="submit" value="Submit" id = "loginButton">
+        </form>
+          
+        <form action="/tenant-signin" method="GET">
+          <button type="submit" id= "tenantBtn"class="btn btn-success btn-lg btn-block">Tenant Login</button>
+        </form>
+
+        <form action="/landlord-signin" method="GET">
+          <button type="submit" id= "landlordBtn"class="btn btn-danger btn-lg btn-block">Landlord Login</button>
+        </form>
+
+      </div>
     </div>
-    <div class=col-md-6>
-      <form action="/landlord" method="POST">
-        <button type="submit" id= "landlordBtn"class="btn btn-danger btn-lg btn-block">Landlord Login</button>
-      </form>
-    </div>
+    
   </div>
-
-  <div class="row-fluid">
-    <div class="col-md-12 ink">
-      Existing work tickets:
-    </div>
-  </div>
-
-  {{!-- It may be better to display these in a table format. Bootstrap garbles the displayed data when the screen resizes. --}}
-  <div class="row-fluid">
-    <div class="col-md-1 ink">Work Ticket ID</div>
-    <div class="col-md-1 ink">Tenant ID</div>
-    <div class="col-md-2 ink">Subject</div>
-    <div class="col-md-5 ink">Message</div>
-    <div class="col-md-1 ink">Status</div>
-    <div class="col-md-2 ink">Date Posted</div>
-  </div> 
-
-  <div class="row-fluid">
-    {{#each data}}
-      <div class="col-md-1 ink">{{this.WTID}}</div>
-      <div class="col-md-1 ink">{{this.TenantID}}</div>
-      <div class="col-md-2 ink">{{this.Subject}}</div>
-      <div class="col-md-5 ink">{{this.Message}}</div>
-      <div class="col-md-1 ink">{{this.Status}}</div>
-      <div class="col-md-2 ink">{{this.Date}}</div>
-    {{/each}}
-  </div> 
-
-
-
 </div>

@@ -1,37 +1,55 @@
-var express = require("express");
-var methodOverride = require("method-override");
-var bodyParser = require("body-parser");
-var http = require('http');
-var app = express();
+var express         = require("express");
+var methodOverride  = require("method-override");
+var bodyParser      = require("body-parser");
+var http            = require('http');
+var passport        = require('passport')
+var session         = require('express-session')
+var env             = require('dotenv').load()
+var exphbs          = require('express-handlebars');
+var app             = express();
 
 //Serve static content for the app from the "public" directory in the application directory.
 app.use("/static", express.static("public"));
 
-// parse application/x-www-form-urlencoded 
-app.use(bodyParser.urlencoded({
-  extended: false
-}))
+// For BodyParser (parse application/x-www-form-urlencoded)
+app.use(bodyParser.urlencoded({ extended: true })); // changed from false
+app.use(bodyParser.json());
 
-// override with POST having ?_method=DELETE
+// For Views (override with POST having ?_method=DELETE)
+app.set('views', './views')
 app.use(methodOverride('_method'))
-var exphbs = require('express-handlebars');
 app.engine('handlebars', exphbs({
-    defaultLayout: 'main'
+    defaultLayout: 'main',
+    extname: '.handlebars'
 }));
-app.set('view engine', 'handlebars');
+app.set('view engine', '.handlebars');
 
+// For Passport
+app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized:true})); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+
+//Models
+var models = require("./models");
+//Sync Database
+models.sequelize.sync().then(function() {
+    console.log('Database synchronized flawlessly.');
+}).catch(function(err) {
+    console.log(err, "Database encountered an error while synchronizing.");
+});
+
+//load passport strategies
+require('./config/passport/passport.js')(passport, models.tenant);
+
+//Routes
+var authRoute = require('./routes/auth.js')(app, passport);
 var routes = require('./controllers/main_controller.js');
 app.use('/', routes);
-app.use('/create', routes);
-app.use('/update', routes);
-app.use('/delete', routes);
 
-// From default express setup:
 // Get port from environment and store in Express.
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
-// From default express setup:
 // Create HTTP server. Listen on provided port, on all network interfaces.
 var server = http.createServer(app);
 server.listen(port);

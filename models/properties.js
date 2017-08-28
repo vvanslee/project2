@@ -2,9 +2,9 @@ module.exports = function (sequelize, DataTypes) {
 
     var Properties = sequelize.define("Properties", {
         PropID: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             allowNull: false,
-            primaryKey: TRUE
+            primaryKey: true
         },
         PropName: {
             type: DataTypes.STRING,
@@ -23,7 +23,7 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
         },
         Zipcode: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             validate: {
                 len: [5,5]
             }

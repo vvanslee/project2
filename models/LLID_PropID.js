@@ -2,11 +2,13 @@ module.exports = function (sequelize, DataTypes) {
 
     var LLID_PropID = sequelize.define("LLID_PropID", {
         LLID: {
-            type: DataTypes.INT,
-            allowNull: false,
+            // autoIncrement: true,
+            primaryKey: true, 
+            type: DataTypes.INTEGER,
+            allowNull: false
         },
         PropID: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             allowNull: false
         }
     });

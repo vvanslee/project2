@@ -1,10 +1,10 @@
 module.exports = function (sequelize, DataTypes) {
 
-    var Landlords = sequelize.define("Landlords", {
-        LLID: {
-            type: DataTypes.INT,
+    var Tenants = sequelize.define("Tenants", {
+        TenantID: {
+            type: DataTypes.INTEGER,
             allowNull: false,
-            primaryKey: TRUE
+            primaryKey: true
         },
         UserName: {
             type: DataTypes.STRING,
@@ -27,7 +27,7 @@ module.exports = function (sequelize, DataTypes) {
         },
         Landlord: {
               type: DataTypes.BOOLEAN,
-            defaultValue: true,
+            defaultValue: false,
             allowNull: false,
             set: function(value) {
                 if (value === 'true') value = true;
@@ -37,6 +37,6 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
-    return Landlords;
+    return Tenants;
    
 };

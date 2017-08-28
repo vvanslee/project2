@@ -2,12 +2,12 @@ module.exports = function (sequelize, DataTypes) {
     
     var Worktickets = sequelize.define("Worktickets", {
         WTID: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             allowNull: false,
-            primaryKey: TRUE
+            primaryKey: true
         },
         TenantID: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
         Subject: {

@@ -2,12 +2,12 @@ module.exports = function (sequelize, DataTypes) {
 
     var Notifications = sequelize.define("Notifications", {
         NoticeID: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             allowNull: false,
-            primaryKey: TRUE
+            primaryKey: true
         },
         PropID: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         Message: {

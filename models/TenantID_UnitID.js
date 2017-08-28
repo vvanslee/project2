@@ -2,11 +2,11 @@ module.exports = function (sequelize, DataTypes) {
 
     var TenantID_UnitID = sequelize.define("TenantID_UnitID", {
         UnitID: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
         TenantID: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             allowNull: false
         }
     });
