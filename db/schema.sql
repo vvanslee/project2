@@ -18,7 +18,7 @@ CREATE TABLE Landlords (
     lastName VARCHAR(255) NOT NULL,
     Email VARCHAR(255) NOT NULL,
     Password VARCHAR(255) NOT NULL,
-    Landlord TINYINT(1) DEFAULT 1 NOT NULL,
+    Landlord BOOLEAN(1) DEFAULT 1 NOT NULL,
     PRIMARY KEY (LLID)
 );
 
@@ -29,7 +29,7 @@ CREATE TABLE Tenants (
     lastName VARCHAR(255) NOT NULL,
     Email VARCHAR(255) NOT NULL,
     Password VARCHAR(255) NOT NULL,
-    Landlord TINYINT(1) DEFAULT 0 NOT NULL,
+    Landlord BOOLEAN(1) DEFAULT 0 NOT NULL,
     PRIMARY KEY (TenantID)
 );
 
