@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Kubo</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Semi+Condensed" rel="stylesheet">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="public/css/normalize.css">
+  <link rel="stylesheet" href="public/css/skeleton.css">
+  <link rel="stylesheet" href="public/css/custom.css">
+
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+  <script src="javascript/app.js"></script>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="public/images/kuboicon.png">
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="row">
+      <div class="col-md-2 col-sm-2">
+        <a class="btn btn-default" href="/blog">See Work Tickets</a>
+      </div>
+    </div>
+			<div class="col-md-6 col-md-offset-3">
+				<form id="cms">
+					<div class="form-group">
+						<label for="title">Title:</label>
+						<input type="text" class="form-control" id="title">
+						<br />
+						<label for="body">Describe the problem:</label>
+						<textarea class="form-control" rows="10" id="body"></textarea>
+						<div class="form-group">
+							<label for="category">Select Category:</label>
+							<select class="form-control" id="category">
+						    <option value="Personal">Personal</option>
+						    <option value="Miscellaneous">Miscellaneous/option>
+						    <option value="Maintainence">Maintainence</option>
+  						</select>
+						</div>
+						<br />
+						<button type="submit" class="btn btn-success submit">Submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- Custom Script -->
+	<script src="js/cms.js" type="text/javascript"></script>
+
+</body>
+
+</html>
