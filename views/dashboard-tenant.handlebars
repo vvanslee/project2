@@ -1,5 +1,6 @@
 <div class = "nav">
     <img class = "logo" src = "static/images/kubologo.png">
+    <span class="username">Welcome {{data.firstname}}!</span>
 </div>
 
   <div class = "main">
@@ -7,7 +8,6 @@
   <div class = "sidebar_spaced">
   <div class = "form_container">
   <h2>Tenant Dashboard</h2>
-  <h5>Welcome {{data.firstname}}!</h5>
 
 
 <div class="dashMaincontainer">
@@ -19,7 +19,7 @@
           <div class="btnContainer">
             <a class="button" id="dashButton" href="/worktickets">Worktickets</a>
             <a class="button" id="dashButton" href="/notifications">Notifications</a>
-            <a class="button" id="dashButton" href="/settings">Settings</a>
+            <a class="button" id="dashButton" href="#openModal">Lease</a>
             <a class="button" id="dashButton" href="/logout">Logout</a>
           </div>
         </form>
@@ -28,7 +28,12 @@
     </div>
 
     <div class="nine columns">
-      MODAL CONTENT WILL BE HERE
+      <div id="openModal" class="modalDialog">
+        <div>	<a href="#close" title="Close" class="close">X</a>
+        	<h2>Modal Box</h2>
+          
+        </div>
+      </div>
     </div>
 
   </div>
