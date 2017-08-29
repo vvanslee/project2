@@ -19,6 +19,18 @@ var mapping = {
     orm.showLandlords("Worktickets", function(res){ // Change 'Worktickets' to 'Landlords' after landlords table is added to the database
       cb(res);
     });
+  },
+
+  toLLID_PropID: function(cb) {
+    orm.showLLID_PropID("LLID_PropID" , function(res){
+      cb(res);
+    });
+  },
+
+  toTenantID_UnitID: function(cb) {
+    orm.showTenantID_UnitID("TentantID_UnitID", function(res){
+      cb(res);
+    });
   }
 };
 
