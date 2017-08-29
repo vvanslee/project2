@@ -46,6 +46,9 @@ table {
     display: block;
     height: 450px;
 }
+.dashMaincontainer {
+    height: 500px;
+}
 form#dashForm {
     height: 100%;
     width: 100%;
