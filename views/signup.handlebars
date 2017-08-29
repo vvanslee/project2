@@ -1,26 +1,33 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title></title>
-</head>
-<body>
-<form id="signup" name="signup" method="post" action="/signup">
-  <select class="half-width" id="tenantLandlordSelector" name="landlord">
-    <option value="true">Landlord</option>
-    <option value="false">Tenant</option>
-  </select>
-  <label for="email">Email Address</label>
-  <input class="text" name="email" type="email" /><br>
-  <label for="username">User Name</label>
-  <input name="username" type="text" /><br>
-  <label for="firstname">Firstname</label>
-  <input name="firstname" type="text" /><br>
-  <label for="lastname">Lastname</label>
-  <input name="lastname" type="text" /><br>
-  <label for="password">Password</label>
-  <input name="password" type="password" /><br>
-  <input class="btn" type="submit" value="Sign Up" />
-</form>
+<div class = "nav">
+    <img class = "logo" src = "static/images/kubologo.png">
+</div>
+   
+<div class = "main">
+  <div class = "leader">
+    <div class = "sidebar_spaced">
+      <div class = "form_container">
+        <form id="signup" name="signup" method="post" action="/signup">
+          <select class="half-width" id="tenantLandlordSelector" name="landlord">
+            <option value="true">Landlord</option>
+            <option value="false">Tenant</option>
+          </select>
+          <label for="email">Email Address</label>
+          <input class="text" name="email" type="email" /><br>
+          <label for="username">User Name</label>
+          <input name="username" type="text" /><br>
+          <label for="firstname">Firstname</label>
+          <input name="firstname" type="text" /><br>
+          <label for="lastname">Lastname</label>
+          <input name="lastname" type="text" /><br>
+          <label for="password">Password</label>
+          <input name="password" type="password" /><br>
+          <input class="btn" type="submit" value="Sign Up" />
+        </form>
+      </div>
+    </div>
 
-</body>
-</html>
+    <div class = "image-container">
+        <img class = "banner" src = "static/images/main.png">
+    </div>
+  </div>
+</div>
