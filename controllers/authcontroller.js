@@ -2,17 +2,17 @@ var exports = module.exports = {}
 
 exports.signup = function(req,res) {res.render('signup');}
 exports.signin = function(req,res) {res.render('signin');}
-exports.dashboard = function(req,res) {res.render('dashboard');}
+exports.dashboard = function(req,res) {
+  // console.log("--authcontroller.js dashboard request: ");
+  // console.log(req.user.landlord);
 
-// // Tenant
-// exports.tenantsignin = function(req,res) {res.render('tenant-signin');}
-// exports.tenantsignup = function(req,res) {res.render('tenant-signup');}
-// exports.tenantdashboard = function(req,res) {res.render('tenant-dashboard');}
-
-// // Landlord
-// exports.landlordsignin = function(req,res) {res.render('landlord-signin');}
-// exports.landlordsignup = function(req,res) {res.render('landlord-signup');}
-// exports.landlorddashboard = function(req,res) {res.render('landlord-dashboard');}
+  var data = req.user;
+  if (req.user.landlord) {
+    res.render('dashboard-landlord', {data});
+  } else {
+    res.render('dashboard-tenant', {data});
+  }
+}
 
 // Return to homepage when logged out
 exports.logout = function(req,res){

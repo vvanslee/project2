@@ -22,12 +22,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/idionym/project2.git"
+    "url": "git+https://github.com/atflowers/project2.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/idionym/project2/issues"
+    "url": "https://github.com/atflowers/project2/issues"
   },
-  "homepage": "https://github.com/idionym/project2#readme"
+  "homepage": "https://github.com/atflowers/project2#readme"
 }
