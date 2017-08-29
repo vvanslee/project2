@@ -190,7 +190,13 @@ h5 {
     top: -30px;
     height: 515px;
 }
-=======
+
+#signup {
+    width: 350px;
+    top: -10px;
+    height: 515px;
+}
+
 .username{
     float: right;
     margin-right: 30px;
