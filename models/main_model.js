@@ -10,13 +10,33 @@ var mapping = {
       cb(res);
     });
   },
+
   toTenant: function(cb) {
-    orm.showTenants("Worktickets", function(res){ // Change 'Worktickets' to 'Tenants' after tenants table is added to the database
+    orm.showTenants("Tenants", function(res){
       cb(res);
     });
   },
+
   toLandlord: function(cb) {
-    orm.showLandlords("Worktickets", function(res){ // Change 'Worktickets' to 'Landlords' after landlords table is added to the database
+    orm.showLandlords("Landlords", function(res){
+      cb(res);
+    });
+  },
+
+  toProperties: function(cb) {
+    orm.showProperties("Properties", function(res){
+      cb(res);
+    });
+  },
+
+  toUnits: function(cb) {
+    orm.showUnitID("UnitID", function(res){
+      cb(res);
+    });
+  },
+
+  toNotifications: function(cb) {
+    orm.showNotifications("Notifications", function(res){
       cb(res);
     });
   },
@@ -32,6 +52,7 @@ var mapping = {
       cb(res);
     });
   }
+
 };
 
-module.exports = mapping; 
+module.exports = mapping;

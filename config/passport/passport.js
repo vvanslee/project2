@@ -1,6 +1,6 @@
 //load bcrypt
 var bCrypt = require('bcrypt-nodejs');
-var models = require("../../models");
+// var models = require("../../models");
 
 console.log("+Passport.js: File Opened");
 
@@ -45,12 +45,14 @@ module.exports = function(passport,user){
           return done(null, false, {message : 'That email is already taken'} );
         } else {
           var userPassword = generateHash(password);
+          console.log(req.body);
           var data = {
             email:      email,
             username:   req.body.username,
             password:   userPassword,
             firstname:  req.body.firstname,
-            lastname:   req.body.lastname
+            lastname:   req.body.lastname,
+            landlord:   req.body.landlord
           };
 
           User.create(data).then( function(newUser, created) {
@@ -102,80 +104,80 @@ module.exports = function(passport,user){
     }
   ));
 
-  // LOCAL SIGNUP - for Landlord
-  passport.use('landlord-local-signup', new LocalStrategy(
-    {           
-      usernameField : 'email',
-      passwordField : 'password',
-      passReqToCallback : true // allows us to pass back the entire request to the callback
-    },
-    function(req, email, password, done){
-      var User = models.landlord;
+  // // LOCAL SIGNUP - for Landlord
+  // passport.use('landlord-local-signup', new LocalStrategy(
+  //   {           
+  //     usernameField : 'email',
+  //     passwordField : 'password',
+  //     passReqToCallback : true // allows us to pass back the entire request to the callback
+  //   },
+  //   function(req, email, password, done){
+  //     var User = models.landlord;
 
-      var generateHash = function(password) {
-        return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
-      };
+  //     var generateHash = function(password) {
+  //       return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
+  //     };
 
-      User.findOne({where: {email:email}}).then( function(User) {
-        if(User) {
-          return done(null, false, {message : 'That email is already taken'} );
-        } else {
-          var userPassword = generateHash(password);
-          var data = {
-            email:      email,
-            username:   req.body.username,
-            password:   userPassword,
-            firstname:  req.body.firstname,
-            lastname:   req.body.lastname
-          };
+  //     User.findOne({where: {email:email}}).then( function(User) {
+  //       if(User) {
+  //         return done(null, false, {message : 'That email is already taken'} );
+  //       } else {
+  //         var userPassword = generateHash(password);
+  //         var data = {
+  //           email:      email,
+  //           username:   req.body.username,
+  //           password:   userPassword,
+  //           firstname:  req.body.firstname,
+  //           lastname:   req.body.lastname
+  //         };
 
-          User.create(data).then( function(newUser, created) {
-            if(!newUser){
-              return done(null, false);
-            }
-            if(newUser){
-              return done(null, newUser);
-            }
-          });
-        }
-      }); 
-    }
-  ));
+  //         User.create(data).then( function(newUser, created) {
+  //           if(!newUser){
+  //             return done(null, false);
+  //           }
+  //           if(newUser){
+  //             return done(null, newUser);
+  //           }
+  //         });
+  //       }
+  //     }); 
+  //   }
+  // ));
       
-  // LOCAL SIGNIN - for Landlord
-  passport.use('landlord-local-signin', new LocalStrategy(
-    {
-      // by default, local strategy uses username and password, we will override with email
-      usernameField:      'email',
-      passwordField:      'password',
-      passReqToCallback:  true // allows us to pass back the entire request to the callback
-    },
-    function(req, email, password, done) {
+  // // LOCAL SIGNIN - for Landlord
+  // passport.use('landlord-local-signin', new LocalStrategy(
+  //   {
+  //     // by default, local strategy uses username and password, we will override with email
+  //     usernameField:      'email',
+  //     passwordField:      'password',
+  //     passReqToCallback:  true // allows us to pass back the entire request to the callback
+  //   },
+  //   function(req, email, password, done) {
 
-      var User = models.landlord;
+  //     var User = models.landlord;
 
-      var isValidPassword = function(userpass, password) {
-        return bCrypt.compareSync(password, userpass);
-      }
+  //     var isValidPassword = function(userpass, password) {
+  //       return bCrypt.compareSync(password, userpass);
+  //     }
 
-      User.findOne({ where : { email: email}}).then(function (User) {
+  //     User.findOne({ where : { email: email}}).then(function (User) {
 
-        if (!User) {
-          return done(null, false, { message: 'Email does not exist' });
-        }
+  //       if (!User) {
+  //         return done(null, false, { message: 'Email does not exist' });
+  //       }
 
-        if (!isValidPassword(User.password,password)) {
-          return done(null, false, { message: 'Incorrect password.' });
-        }
+  //       if (!isValidPassword(User.password,password)) {
+  //         return done(null, false, { message: 'Incorrect password.' });
+  //       }
 
-        var Userinfo = User.get();
-        return done(null,Userinfo);
+  //       var Userinfo = User.get();
+  //       return done(null,Userinfo);
 
-      }).catch(function(err){
-        console.log("Error:",err);
-        return done(null, false, { message: 'Something went wrong with your Signin' });
-      });
-    }
-  ));
+  //     }).catch(function(err){
+  //       console.log("Error:",err);
+  //       return done(null, false, { message: 'Something went wrong with your Signin' });
+  //     });
+  //   }
+  // ));
 
 }

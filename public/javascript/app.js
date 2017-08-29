@@ -1,5 +1,10 @@
 $( document ).ready(function() {
   console.log( "ready!" );
+  $("#signupBtn").on('click', function(e){
+    e.preventDefault();
+    // console.log("The signup button was clicked.");
+    window.location="/signup";
+  });
 });
 
 

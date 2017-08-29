@@ -39,7 +39,7 @@ models.sequelize.sync().then(function() {
 });
 
 //load passport strategies
-require('./config/passport/passport.js')(passport, models.tenant);
+require('./config/passport/passport.js')(passport, models.user);
 
 //Routes
 var authRoute = require('./routes/auth.js')(app, passport);

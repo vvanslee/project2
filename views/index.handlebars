@@ -1,7 +1,7 @@
 <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <div class = "nav">
-      KUBO 
+      KUBO
 </div>
    
 
@@ -9,7 +9,21 @@
   <div class = "leader">
     <div class = "sidebar_spaced">
       <div class = "form_container">
-        <form>
+        <form id="signin" name="signin" method="post" action="signin">
+          <label for="email">Email Address</label>
+          <input class="text" name="email" type="text" />
+          <br>
+          <label for="password">Password</label>
+          <input name="password" type="password" />
+          <br>
+          <input class="btn" type="submit" value="Sign In" />
+          <br>
+          {{!-- <form id="signup" name="signup" style="display:inline" method="get" action="signup">
+            <input type="submit" value="Sign Up" />
+          </form> --}}
+          <button id="signupBtn">Sign Up</button>
+        </form>
+        {{!-- <form>
           <input class="half-width" type="email" placeholder="test@mailbox.com" id="emailInput">
           <input class="half-width" type="password" placeholder="•••••••••" id="passwordInput">
           <input class="button-primary" type="submit" value="Submit" id = "loginButton">
@@ -32,7 +46,7 @@
 
         <form action="/landlord-signin" method="GET">
           <button type="submit" id= "landlordBtn"class="btn btn-danger btn-lg btn-block">Landlord Login</button>
-        </form>
+        </form> --}}
 
       </div>
     </div>
