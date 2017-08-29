@@ -183,6 +183,14 @@ h5 {
     float: left !important;
     max-width: 100%;
 }
+
+
+#signin {
+    width: 350px;
+    top: -30px;
+    height: 515px;
+}
+=======
 .username{
     float: right;
     margin-right: 30px;
@@ -247,3 +255,4 @@ h5 {
 /*---------------------
     END MODAL 
 ---------------------*/
+
