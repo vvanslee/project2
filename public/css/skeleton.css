@@ -361,14 +361,13 @@ ol,
 form {
   background-color: #e8e8e6;
   text-align: center;
-  
   max-width: 350px;
-  border-radius: 20px;
-  height: 500px;
+  border-radius: 10px;
+  height: 480px;
   position: relative !important;
   float: right !important;
   margin-bottom: -60px !important;
-  margin-top: 44px !important;
+  margin-top: 50px !important;
   margin-right: 100px !important;
   z-index: 40 !important;
 }

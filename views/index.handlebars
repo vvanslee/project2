@@ -1,4 +1,4 @@
-<!-- Primary Page Layout
+{{!-- <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <div class = "nav">
       KUBO
@@ -26,33 +26,94 @@
           </form> --}}
           <button id="signupBtn">Sign Up</button>
         </form>
-        {{!-- <form>
-          <input class="half-width" type="email" placeholder="test@mailbox.com" id="emailInput">
-          <input class="half-width" type="password" placeholder="•••••••••" id="passwordInput">
-          <input class="button-primary" type="submit" value="Submit" id = "loginButton">
-          <input class="half-width" type="text" placeholder="username" id="usernameInput">
-          <input class="half-width" type="email" placeholder="email" id="emailRegisteredInput">
-          <input class="half-width" type="password" placeholder="•••••••••" id="passwordInput">
-          <input class="half-width" type="text" placeholder="firstname" id="firstNameInput">
-          <input class="half-width" type="text" placeholder="lastname" id="secondNameInput">
-            <select class="half-width" id="tenantLandlordSelector">
-                <option value="Option 1">Landlord</option>
-                <option value="Option 2">Tenant</option>
-              </select>
-            
-            <input class="button-primary" type="submit" value="Submit" id = "loginButton">
-        </form>
-          
-        <form action="/tenant-signin" method="GET">
-          <button type="submit" id= "tenantBtn"class="btn btn-success btn-lg btn-block">Tenant Login</button>
-        </form>
-
-        <form action="/landlord-signin" method="GET">
-          <button type="submit" id= "landlordBtn"class="btn btn-danger btn-lg btn-block">Landlord Login</button>
-        </form> --}}
-
+        
       </div>
     </div>
     
   </div>
+</div> --}}
+
+
+<!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class = "nav">
+    <img class = "logo" src = "static/images/kubologo.png">
 </div>
+   
+
+<div class = "main">
+  <div class = "leader">
+    <div class = "sidebar_spaced">
+      <div class = "form_container">
+        <form id="signin" name="signin" method="post" action="signin">
+          <label for="email">Email Address</label>
+          <input class="text" name="email" type="text" />
+          <br>
+          <label for="password">Password</label>
+          <input name="password" type="password" />
+          <br>
+          <input class="btn" type="submit" value="Sign In" />
+          <br>
+          {{!-- <form id="signup" name="signup" style="display:inline" method="get" action="signup">
+            <input type="submit" value="Sign Up" />
+          </form> --}}
+          <button id="signupBtn">Sign Up</button>
+        </form>
+      </div>
+    </div>
+    <div class = "image-container">
+        <img class = "banner" src = "static/images/main.png">
+    </div>
+  </div>
+</div>
+
+<div class = "content">
+  <div class = "container">
+    <div class = "row">
+       <div class="four columns">
+        <center><img class="wifi" src="static/images/wifi.png"></center>
+          <h6>Have Kubo everywhere you go. Stay up to date with what's happening in your building even while you're away.</h6>
+       </div>
+       <div class="four columns">
+         <center><img class="docs" src="static/images/documents.png"></center>
+          <h6>Have access to all your important documents in one place. Never sift through emails and paper copies to find what you need!</h6>
+       </div>
+       <div class="four columns">
+         <center><img class="announcements" src="static/images/announcements.png"></center>
+        <h6>Never miss an announcement about your unit! Whether it be a security update, maintenance issue, weather report, or new paint!</h6>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class = "landlordPerks">
+    <div class = "landlord-container">
+      <div class = "row">
+      <div class = "six columns">
+        <h5>Lorem ipsum dolor sit amet, vitae fusce cursus convallis nec, eu senectus fusce mi, aliquet duis massa suspendisse erat imperdiet, rhoncus phasellus suspendisse fermentum. Sed eu adipiscing vestibulum pede erat deleniti, fringilla ultrices nisl. Sed a, fusce eleifend ultrices mauris. Ad ac, sagittis pede lectus in nunc vel et, cursus netus semper, nec tempus proin.</h5>
+      </div>
+      <div class = "six columns">
+        <img class = "landlord" src = "static/images/landlord2.png">
+      </div>
+    </div>
+    </div>
+</div>
+
+<div class = "tenantPerks">
+    <div class = "tenant-container">
+      <div class = "row">
+        <div class = "six columns">
+          <img class = "tenant" src = "static/images/tenant.png">
+        </div>
+        <div class = "six columns">
+          <h5>Lorem ipsum dolor sit amet, vitae fusce cursus convallis nec, eu senectus fusce mi, aliquet duis massa suspendisse erat imperdiet, rhoncus phasellus suspendisse fermentum. Sed eu adipiscing vestibulum pede erat deleniti, fringilla ultrices nisl. Sed a, fusce eleifend ultrices mauris. Ad ac, sagittis pede lectus in nunc vel et, cursus netus semper, nec tempus proin.</h5>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
