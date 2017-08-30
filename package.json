@@ -22,12 +22,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/atflowers/project2.git"
+    "url": "https://github.com/shaunacurran/project2"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/atflowers/project2/issues"
+    "url": "https://github.com/shaunacurran/project2"
   },
-  "homepage": "https://github.com/atflowers/project2#readme"
+  "homepage": "https://github.com/shaunacurran/project2"
 }
