@@ -3,39 +3,41 @@
     <span class="username">Welcome {{data.firstname}}!</span>
 </div>
 
-  <div class = "main">
-  <div class = "leader">
-  <div class = "sidebar_spaced">
-  <div class = "form_container">
   <h2>Landlord Dashboard</h2>
   
-
-
-<div class="dashMaincontainer">
   <div class="row">
-    <div class="three columns">
 
       <div class="dashContainer">
         <form id="dashForm">
           <div class="btnContainer">
-            <a class="button" id="dashButton" href="/worktickets">Worktickets</a>
-            <a class="button" id="dashButton" href="/notifications">Notifications</a>
-            <a class="button" id="dashButton" href="/settings">Settings</a>
+            <a class="button" id="dashButton" href="javascript:showonlyone('worktickets');">Worktickets</a>
+            <a class="button" id="dashButton" href="javascript:showonlyone('notifications');">Manage Notifications</a>
+            <a class="button" id="dashButton" href="javascript:showonlyone('properties');">Manage Properties</a>
             <a class="button" id="dashButton" href="/logout">Logout</a>
           </div>
         </form>
+
+        <div class="newboxes" id="worktickets">WORKTICKETS</div>
+        <div class="newboxes" id="notifications">NOTIFICATIONS</div>
+        <div class="newboxes" id="properties">PROPERTIES</div>
+
       </div>
 
-    </div>
 
-    <div class="nine columns">
-      MODAL CONTENT WILL BE HERE
-    </div>
 
   </div>
-</div>
 
-  </div>
-  </div>
-  </div>
-  </div>
+<script>
+
+  function showonlyone(thechosenone) {
+      $('.newboxes').each(function(index) {
+            if ($(this).attr("id") == thechosenone) {
+                $(this).show(200);
+            }
+            else {
+                $(this).hide(600);
+            }
+      });
+  }
+
+</script>
