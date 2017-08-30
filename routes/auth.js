@@ -6,6 +6,8 @@ module.exports = function(app,passport){
     app.get('/signup', authController.signup);
     app.get('/signin', authController.signin);
     app.get('/dashboard', isLoggedIn, authController.dashboard);
+    app.get('/dashboard/properties', isLoggedIn, authController.properties);
+    app.get('/dashboard/notifications', isLoggedIn, authController.notifications);
     app.get('/logout', authController.logout);
 
     // POST controls

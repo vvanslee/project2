@@ -5,24 +5,6 @@
 
   <h2>Tenant Dashboard</h2>
 
-  <div class="testing-container">
-    <span>CSS is located in style.css, referenced in main.handlebars</span>
-    <span>'data' object is pulled from authcontroller.js</span>
-    <span>UserID [{{data.UserID}}] can be used to query data specific to {{data.UserName}} from other tables.</span>
-    <span>Query:</span>
-    <table>
-      <tr>
-        <th>WorkticketID</th>
-        <th>UserID</th>
-        <th>Subject</th>
-        <th>Message</th>
-        <th>Status</th>
-        <th>Start Date</th>
-      </tr>
-      {{#each qry}}<tr><td>{{this.WorkticketID}}</td><td>{{this.UserID}}</td><td>{{this.Subject}}</td><td>{{this.Message}}</td><td>{{this.Status}}</td><td>{{this.createdAt}}</td></tr>{{/each}}
-    </table>
-  </div>
-
   <div class="row">
 
     <div class="dashContainer">
@@ -92,12 +74,6 @@
       $('.newboxes').each(function(index) {
             if ($(this).attr("id") == thechosenone) {
                 $(this).show();
-
-                if($(this).attr("id") === "worktickets") {
-                  // Do nothing
-                } else {
-                  window.location.href= "/dashboard/" + $(this).attr("id");
-                }
             }
             else {
                 $(this).hide();

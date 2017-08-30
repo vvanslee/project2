@@ -12,14 +12,15 @@
     <span>Query:</span>
     <table>
       <tr>
-        <th>WorkticketID</th>
-        <th>UserID</th>
-        <th>Subject</th>
-        <th>Message</th>
-        <th>Status</th>
-        <th>Start Date</th>
+        <th>PropertyID</th>
+        <th>Property Name</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zipcode</th>
+        <th>Created</th>
       </tr>
-      {{#each qry}}<tr><td>{{this.WorkticketID}}</td><td>{{this.UserID}}</td><td>{{this.Subject}}</td><td>{{this.Message}}</td><td>{{this.Status}}</td><td>{{this.createdAt}}</td></tr>{{/each}}
+      {{#each qry}}<tr><td>{{this.PropertyID}}</td><td>{{this.PropertyName}}</td><td>{{this.Address}}</td><td>{{this.City}}</td><td>{{this.State}}</td><td>{{this.Zipcode}}</td><td>{{this.createdAt}}</td></tr>{{/each}}
     </table>
   </div>
 
@@ -51,13 +52,6 @@
       $('.newboxes').each(function(index) {
             if ($(this).attr("id") == thechosenone) {
                 $(this).show(200);
-
-                if($(this).attr("id") === "worktickets") {
-                  // Do nothing
-                } else {
-                  window.location.href= "/dashboard/" + $(this).attr("id");
-                }
-               
             }
             else {
                 $(this).hide(600);
