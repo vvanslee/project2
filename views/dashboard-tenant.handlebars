@@ -1,6 +1,6 @@
 <div class = "nav">
     <img class = "logo" src = "static/images/kubologo.png">
-    <span class="username">Welcome {{data.FirstName}}!</span>
+    <span class="username">Welcome tenant!</span>
 </div>
 
   <h2>Tenant Dashboard</h2>
@@ -17,8 +17,42 @@
         </div>
       </form>
 
-      <div class="newboxes" id="worktickets">WORKTICKETS</div>
-      <div class="newboxes" id="notifications">NOTIFICATIONS</div>
+      <div class="contentHolder">
+
+        <div class="newboxes" id="worktickets">
+          <div class="tickets">
+            WORKTICKETS
+          </div>
+          
+          <div class="createTicket">
+            <center><span class="ticketHeader">CREATE A WORKTICKET</span></center>
+            <form id="ticketForm">
+              <div class="form-group">
+                <label class="title" for="title">Title:</label>
+                <input type="text" class="form-control" id="title">
+                <br />
+                <label for="body">Describe the problem:</label>
+                <textarea class="form-control" rows="10" id="body"></textarea>
+                <div class="form-group">
+                  <label for="category">Select Category:</label>
+                  <select class="form-control" id="category">
+                    <option value="Maintainence">Maintainence</option>
+                    <option value="Miscellaneous">Miscellaneous</option>
+                  </select>
+                </div>
+                <br />
+                <button type="submit" class="btn btn-success submit">Submit</button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+        <div class="newboxes" id="notifications">
+          NOTIFICATIONS
+        </div>
+
+      </div>
 
     </div>
   </div>
@@ -39,10 +73,10 @@
   function showonlyone(thechosenone) {
       $('.newboxes').each(function(index) {
             if ($(this).attr("id") == thechosenone) {
-                $(this).show(200);
+                $(this).show();
             }
             else {
-                $(this).hide(600);
+                $(this).hide();
             }
       });
   }
