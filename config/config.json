@@ -16,6 +16,8 @@
   },
   "production": {
     "use_env_variable": "JawsDB_URL",
+    "username": "root",
+    "password": "Jacob0429",
     "dialect": "mysql"
   }
 }
