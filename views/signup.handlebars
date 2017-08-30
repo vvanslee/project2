@@ -1,7 +1,6 @@
 <div class = "nav">
     <img class = "logo" src = "static/images/kubologo.png">
-    <input class="navSignin" type="submit" value="Login" />
-    <input class="navRegister" type="submit" value = "Register"/>
+    
 </div>
    
 <div class = "main">
@@ -13,16 +12,16 @@
             <option value="true">Landlord</option>
             <option value="false">Tenant</option>
           </select>
-          <label for="email">Email Address</label>
-          <input class="text" name="email" type="email" /><br>
-          <label for="username">User Name</label>
-          <input name="username" type="text" /><br>
-          <label for="firstname">Firstname</label>
-          <input name="firstname" type="text" /><br>
-          <label for="lastname">Lastname</label>
-          <input name="lastname" type="text" /><br>
-          <label for="password">Password</label>
-          <input name="password" type="password" /><br>
+          {{!-- <label for="email">Email Address</label> --}}
+          <input class="text" name="email" type="email" placeholder="Email"/><br>
+          {{!-- <label for="username">User Name</label> --}}
+          <input name="username" type="text" placeholder="Username"/><br>
+          {{!-- <label for="firstname">Firstname</label> --}}
+          <input name="firstname" type="text" placeholder="First Name"/><br>
+          {{!-- <label for="lastname">Lastname</label> --}}
+          <input name="lastname" type="text" placeholder="Last Name"/><br>
+          {{!-- <label for="password">Password</label> --}}
+          <input name="password" type="password" placeholder="•••••••" /><br>
           <input class="btn" type="submit" value="Sign Up" />
         </form>
       </div>
@@ -58,7 +57,7 @@
     <div class = "landlord-container">
       <div class = "row">
       <div class = "six columns">
-        <h5>Lorem ipsum dolor sit amet, vitae fusce cursus convallis nec, eu senectus fusce mi, aliquet duis massa suspendisse erat imperdiet, rhoncus phasellus suspendisse fermentum. Sed eu adipiscing vestibulum pede erat deleniti, fringilla ultrices nisl. Sed a, fusce eleifend ultrices mauris. Ad ac, sagittis pede lectus in nunc vel et, cursus netus semper, nec tempus proin.</h5>
+        <h5>Kubo can manage all sensitive documents like leases, sublet agreements, and building codes displaying them in one convenient location that you can access anytime.</h5>
       </div>
       <div class = "six columns">
         <img class = "landlord" src = "static/images/landlord2.png">
@@ -74,7 +73,7 @@
           <img class = "tenant" src = "static/images/tenant.png">
         </div>
         <div class = "six columns">
-          <h5>Lorem ipsum dolor sit amet, vitae fusce cursus convallis nec, eu senectus fusce mi, aliquet duis massa suspendisse erat imperdiet, rhoncus phasellus suspendisse fermentum. Sed eu adipiscing vestibulum pede erat deleniti, fringilla ultrices nisl. Sed a, fusce eleifend ultrices mauris. Ad ac, sagittis pede lectus in nunc vel et, cursus netus semper, nec tempus proin.</h5>
+          <h5>Report, track, fix, and update existing maintenance orders . Kubo keeps a clean record of all landlord unit interactions, increasing transparency between tenants and owners, while maintaining accountability for all parties.</h5>
         </div>
       </div>
     </div>
