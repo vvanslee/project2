@@ -1,4 +1,4 @@
-table {
+/*table {
     background-color: #E4F7FF;
     text-align: center;
     max-width: 90%;
@@ -10,7 +10,7 @@ table {
     margin-top: 44px !important;
     margin-right: 100px !important;
     z-index: 40 !important;
-}
+}*/
 
 .main {
     height: 550px;
@@ -133,12 +133,14 @@ form#dashForm {
     background-color: #f2f2f2;
     width: 80%;
     height: 100%;
+    border-radius: 0 20px 20px 0;
 }
 
 #worktickets {
     background-color: #f2f2f2;
     width: 100%;
     height: 100%;
+    border-radius: 0 20px 20px 0;
 }
 
 .newboxes {
@@ -162,27 +164,35 @@ form#dashForm {
     pointer-events: none;
 }
 .tickets {
-    width: 55%;
+    width: 50%;
     height: 100%;
     display: inline-block;
 }
 
 .createTicket {
-    width: 25%;
+    width: 20%;
     height: 100%;
     display: inline-block;
     margin-top: 20px;
+    margin-right: 25px;
+    float: right;
 }
 
 .ticketHeader {
     font-family: ‘Encode Sans Semi Condensed’, sans-serif;
-    font-size: 20px;
+    font-size: 15px;
     margin-bottom: 10px;
 }
 
 #ticketForm {
     width: 100%;
-    height: 70%;
+    height: 90%;
+    margin: 0 !important;
+    clear: both;
+}
+#notificationForm {
+    width: 100%;
+    height: 90%;
     margin: 0 !important;
     clear: both;
 }
@@ -196,6 +206,20 @@ label {
 .form-control {
     width: 90%;
 }
+.notifications {
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+}
+.createNotification {
+    width: 20%;
+    height: 100%;
+    display: inline-block;
+    margin-top: 20px;
+    float: right;
+    margin-right: 25px;
+}
 
 
 /*----------------------------
@@ -203,17 +227,17 @@ label {
 ----------------------------*/
 
 table {
-    background-color: #E4F7FF;
+    background-color: #f2f2f2 !important;
     text-align: center;
-    max-width: 90%;
+    width: 100%;
     border-radius: 10px;
-    height: 300px;
-    position: relative !important;
-    float: right !important;
-    margin-bottom: -60px !important;
-    margin-top: 44px !important;
-    margin-right: 100px !important;
+    height: 80%;
+    margin: 5% 0 0 40px !important;
     z-index: 40 !important;
+    padding: 0 !important;
+    float: left !important;
+    font-family: ‘Roboto’, sans-serif;
+    font-size: 14px;
 }
 
 .main {

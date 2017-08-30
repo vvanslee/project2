@@ -34,7 +34,18 @@
           </div>
         </form>
 
-        <div class="newboxes" id="worktickets">WORKTICKETS</div>
+        <div class="newboxes" id="worktickets">
+          <table>
+            <tr>
+              <th>NotificationID</th>
+              <th>PropertyID</th>
+              <th>Message</th>
+              <th>Expiration</th>
+              <th>Created</th>
+            </tr>
+            {{#each qry}}<tr><td>{{this.NotificationID}}</td><td>{{this.PropertyID}}</td><td>{{this.Message}}</td><td>{{this.Expiration}}</td><td>{{this.createdAt}}</td></tr>{{/each}}
+          </table>
+        </div>
         <div class="newboxes" id="notifications">NOTIFICATIONS</div>
         <div class="newboxes" id="properties">PROPERTIES</div>
 
