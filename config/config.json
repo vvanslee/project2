@@ -2,7 +2,7 @@
   "development": {
 
     "username": "root",
-    "password": "fml!Ypplsuc15",
+    "password": "",
     "database": "kubo_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
