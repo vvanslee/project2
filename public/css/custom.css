@@ -87,6 +87,108 @@ form#dashForm {
     display: none;
 }
 
+.dashContainer {
+    height: 80%;
+    width: 100%;
+    margin: 0 10% 0 10%;
+    padding: 0;
+    position: absolute;
+    background: #ffffff;
+}
+
+form#dashForm {
+    height: 100%;
+    width: 15%;
+    margin: 0 !important;
+    display: table;
+    float: left !important;
+    border-radius: 0 20px 20px 0;
+}
+.btnContainer {
+    width: 100%;
+    height: 20%;
+    display: table-cell;
+    vertical-align: bottom;
+}
+
+#dashButton {
+    width: 100%;
+    border-radius: 0;
+    margin: 0 !important;
+    border-right-width: 0;
+    border-left-width: 0;
+    border-bottom-width: 0;
+}
+
+.contentHolder {
+    background-color: #f2f2f2;
+    width: 80%;
+    height: 100%;
+}
+
+#worktickets {
+    background-color: #f2f2f2;
+    width: 100%;
+    height: 100%;
+}
+
+.newboxes {
+    display: none;
+}
+
+.modalDialog {
+    position: fixed;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #f2f2f2;
+    z-index: 99999;
+    opacity: 0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+.tickets {
+    width: 55%;
+    height: 100%;
+    display: inline-block;
+}
+
+.createTicket {
+    width: 25%;
+    height: 100%;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.ticketHeader {
+    font-family: ‘Encode Sans Semi Condensed’, sans-serif;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#ticketForm {
+    width: 100%;
+    height: 90%;
+    margin: 0 !important;
+    clear: both;
+}
+
+label {
+    margin-top: 20px;
+}
+textarea.form-control {
+    height: 30%;
+}
+.form-control {
+    width: 90%;
+}
+
+
 /*----------------------------
     END DASH STYLES
 ----------------------------*/
