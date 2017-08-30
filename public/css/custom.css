@@ -42,6 +42,17 @@ table {
     position: relative;
 }
 
+.loginMainPage {
+    height: 100%;
+    width: 100%;
+}
+.mainLoginImage {
+    height: 100%;
+    width:100%;
+    position: fixed;
+    background-repeat: no-repeat;
+}
+
 .banner {
     display: block;
     height: 450px;
@@ -269,22 +280,27 @@ h6{
 .nav {
     background-color: #ffffff;
     padding: 10px;
+    height: 40px;
     top: 0;
 }
 
-.navRegister {
+/* .navRegister {
     float: right;
     margin-right: 5px;
-    background-color: #33C3F0;
+    color: #ffffff !important;
+    background-color: #33C3F0 !important;
     border-color: #33C3F0;
 }
 
 .navSignin {
     float: right;
     margin-right: 40px;
-    background-color: #33C3F0;
-    border-color: #33C3F0;
-}
+    background-color: #33C3F0 !important;
+    border-color: #33C3F0 !important;
+} */
+
+
+
 
 .landlord {
     position: relative !important;
@@ -307,23 +323,32 @@ h5 {
     font-family: 'Encode Sans', sans-serif;
 }
 
+.content {
+    margin: 40px;
+}
+
 .tenant {
     position: relative !important;
     float: left !important;
+    padding: 0;
     max-width: 100%;
 }
 
 
 #signin {
     width: 350px;
-    top: -30px;
-    height: 515px;
+    /* top: -30px; */
+    height: 515px !important ;
+}
+
+.contactUs {
+    width: 600px;
 }
 
 #signup {
     width: 350px;
     top: -10px;
-    height: 515px;
+    height: 515px !important;
 }
 
 .username{
