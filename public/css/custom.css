@@ -37,6 +37,7 @@ table {
 }
 
 
+
 .image-container {
     height: auto;
     position: relative;
@@ -46,7 +47,7 @@ table {
     height: 100%;
     width: 100%;
 }
-.mainLoginImage {
+.workticket-background {
     height: 100%;
     width:100%;
     position: fixed;
@@ -68,6 +69,7 @@ table {
     padding: 0;
     position: absolute;
     background: #ffffff;
+    z-index: 100;
 }
 
 form#dashForm {
@@ -105,6 +107,7 @@ form#dashForm {
     padding: 0;
     position: absolute;
     background: #ffffff;
+    z-index: 99;
 }
 
 form#dashForm {
