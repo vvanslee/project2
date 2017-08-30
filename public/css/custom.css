@@ -46,24 +46,28 @@ table {
     display: block;
     height: 450px;
 }
-.dashMaincontainer {
-    height: 500px;
-}
-form#dashForm {
-    height: 100%;
-    width: 100%;
-    display: table;
-    margin: 0 !important;
-    float: left !important;
-    border-radius: 0 20px 20px 0;
-}
+
+/*--------------------------
+    DASHBOARD STYLES
+--------------------------*/
+
 .dashContainer {
-    height: 100%;
+    height: 80%;
     width: 100%;
     padding: 0;
     position: absolute;
-    background: #f2f2f2;
+    background: #ffffff;
 }
+
+form#dashForm {
+    height: 100%;
+    width: 300px;
+    display: table;
+    margin: 0 0 0 10% !important;
+    float: left !important;
+    border-radius: 0 20px 20px 0;
+}
+
 .btnContainer {
     width: 100%;
     height: 20%;
@@ -78,6 +82,14 @@ form#dashForm {
     border-left-width: 0;
     border-bottom-width: 0;
 }
+
+.newboxes {
+    display: none;
+}
+
+/*----------------------------
+    END DASH STYLES
+----------------------------*/
 
 table {
     background-color: #E4F7FF;

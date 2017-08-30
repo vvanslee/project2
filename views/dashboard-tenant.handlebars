@@ -3,43 +3,47 @@
     <span class="username">Welcome {{data.firstname}}!</span>
 </div>
 
-  <div class = "main">
-  <div class = "leader">
-  <div class = "sidebar_spaced">
-  <div class = "form_container">
   <h2>Tenant Dashboard</h2>
 
-
-<div class="dashMaincontainer">
   <div class="row">
-    <div class="three columns">
 
-      <div class="dashContainer">
-        <form id="dashForm">
-          <div class="btnContainer">
-            <a class="button" id="dashButton" href="/worktickets">Worktickets</a>
-            <a class="button" id="dashButton" href="/notifications">Notifications</a>
-            <a class="button" id="dashButton" href="#openModal">Lease</a>
-            <a class="button" id="dashButton" href="/logout">Logout</a>
-          </div>
-        </form>
-      </div>
-
-    </div>
-
-    <div class="nine columns">
-      <div id="openModal" class="modalDialog">
-        <div>	<a href="#close" title="Close" class="close">X</a>
-        	<h2>Modal Box</h2>
-          
+    <div class="dashContainer">
+      <form id="dashForm">
+        <div class="btnContainer">
+          <a class="button" id="dashButton" href="javascript:showonlyone('worktickets');">Worktickets</a>
+          <a class="button" id="dashButton" href="javascript:showonlyone('notifications');">Notifications</a>
+          <a class="button" id="dashButton" href="#openModal">Lease</a>
+          <a class="button" id="dashButton" href="/logout">Logout</a>
         </div>
+      </form>
+
+      <div class="newboxes" id="worktickets">WORKTICKETS</div>
+      <div class="newboxes" id="notifications">NOTIFICATIONS</div>
+
+    </div>
+  </div>
+
+
+
+
+    <div id="openModal" class="modalDialog">
+      <div>	<a href="#close" title="Close" class="close">X</a>
+      	<h2>Modal Box</h2>
       </div>
     </div>
 
-  </div>
-</div>
 
-  </div>
-  </div>
-  </div>
-  </div>
+<script>
+
+  function showonlyone(thechosenone) {
+      $('.newboxes').each(function(index) {
+            if ($(this).attr("id") == thechosenone) {
+                $(this).show(200);
+            }
+            else {
+                $(this).hide(600);
+            }
+      });
+  }
+
+</script>
