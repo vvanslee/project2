@@ -169,6 +169,21 @@ h6{
     padding: 10px;
     top: 0;
 }
+
+.navRegister {
+    float: right;
+    margin-right: 5px;
+    background-color: #33C3F0;
+    border-color: #33C3F0;
+}
+
+.navSignin {
+    float: right;
+    margin-right: 40px;
+    background-color: #33C3F0;
+    border-color: #33C3F0;
+}
+
 .landlord {
     position: relative !important;
     float: right !important;
