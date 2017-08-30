@@ -1,4 +1,4 @@
-body {
+/* body {
   background: skyblue;
 }
 
@@ -15,5 +15,23 @@ body {
 
 .ink {
   color: black;
+} */
+
+#testing-container {
+  z-index: 9000;
+  border: 2px solid black;
+  right: 1%;
+  top: 10%;
+  height: 400px;
+  width: 50%;
+  position: fixed;
+  display: block;
 }
 
+#testing-container span {
+  position: relative;
+  display: block;
+  font-size: 10px;
+  margin-left: 5px;
+
+}

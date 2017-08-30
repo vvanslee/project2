@@ -6,10 +6,19 @@ console.log("Made it to main_controller.js");
 
 router.get('/', function(req,res) {
   console.log("main_controller.js - router.get(/)");
-  mmodel.toWorktickets(function(data){
-    res.render('index', {data});
-  });
+  res.render('index');
+  // mmodel.toWorktickets(function(data){
+  //   res.render('index', {data});
+  // });
 });
+
+//Creates a security breach
+// router.get('/dashboard-landlord', function(req,res) {
+//   console.log("--------main_controller.js - router.get(/)");
+//   mmodel.toWorktickets(function(data){
+//     console.log(data);
+//   });
+// });
 
 /* router.get('/tenant-signin', function(req, res){
   console.log(req.body.id);

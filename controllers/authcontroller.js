@@ -1,14 +1,19 @@
+var authModel = require('../models/main_model.js');
 var exports = module.exports = {}
 
 exports.signup = function(req,res) {res.render('signup');}
 exports.signin = function(req,res) {res.render('signin');}
 exports.dashboard = function(req,res) {
-  // console.log("--authcontroller.js dashboard request: ");
-  // console.log(req.user.landlord);
 
   var data = req.user;
+  // console.log(data);
   if (data.Landlord) {
-    res.render('dashboard-landlord', {data});
+    authModel.toWorktickets(function(qry){
+      console.log("--------------MADE IT TO THE AUTHMODEL!!------------------");
+      console.log(qry);
+      res.render('dashboard-landlord', {data, qry});
+    });
+    // res.render('dashboard-landlord', {data});
   } else {
     res.render('dashboard-tenant', {data});
   }

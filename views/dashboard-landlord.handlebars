@@ -1,10 +1,28 @@
 <div class = "nav">
     <img class = "logo" src = "static/images/kubologo.png">
-    <span class="username">Welcome {{data.FirstName}}!</span>
+    <span class="username">Welcome to the Landlord Dashboard, {{data.FirstName}}!</span>
 </div>
 
   <h2>Landlord Dashboard</h2>
   
+  <div id="testing-container">
+    <span>CSS is located in style.css, referenced in main.handlebars</span>
+    <span>'data' object is pulled from authcontroller.js</span>
+    <span>UserID [{{data.UserID}}] can be used to query data specific to {{data.UserName}} from other tables.</span>
+    <span>Query:</span>
+    <table>
+      <tr>
+        <th>WorkticketID</th>
+        <th>UserID</th>
+        <th>Subject</th>
+        <th>Message</th>
+        <th>Status</th>
+        <th>Start Date</th>
+      </tr>
+      {{#each qry}}<tr><td>{{this.WorkticketID}}</td><td>{{this.UserID}}</td><td>{{this.Subject}}</td><td>{{this.Message}}</td><td>{{this.Status}}</td><td>{{this.createdAt}}</td></tr>{{/each}}
+    </table>
+  </div>
+
   <div class="row">
 
       <div class="dashContainer">
