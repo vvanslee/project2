@@ -14,12 +14,12 @@ module.exports = function(passport,user){
 
   // Serialize the user
   passport.serializeUser(function(user, done) {
-    done(null, user.id);
+    done(null, user.UserID);
   });
 
   // Deserialize the user
-  passport.deserializeUser(function(id, done) {
-    User.findById(id).then(function(user) {
+  passport.deserializeUser(function(UserID, done) {
+    User.findById(UserID).then(function(user) {
       if(user) {
         done(null, user.get());
       } else {
@@ -40,19 +40,19 @@ module.exports = function(passport,user){
         return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
       };
 
-      User.findOne({where: {email:email}}).then( function(user) {
+      User.findOne({where: {Email:email}}).then( function(user) {
         if(user) {
           return done(null, false, {message : 'That email is already taken'} );
         } else {
           var userPassword = generateHash(password);
           console.log(req.body);
           var data = {
-            email:      email,
-            username:   req.body.username,
-            password:   userPassword,
-            firstname:  req.body.firstname,
-            lastname:   req.body.lastname,
-            landlord:   req.body.landlord
+            Email:      email,
+            UserName:   req.body.username,
+            Password:   userPassword,
+            FirstName:  req.body.firstname,
+            LastName:   req.body.lastname,
+            Landlord:   req.body.landlord
           };
 
           User.create(data).then( function(newUser, created) {
@@ -79,18 +79,22 @@ module.exports = function(passport,user){
     function(req, email, password, done) {
 
       var User = user;
+      console.log("---passport.js LOCAL SIGNIN");
 
       var isValidPassword = function(userpass, password) {
         return bCrypt.compareSync(password, userpass);
       }
 
-      User.findOne({ where : { email: email}}).then(function (user) {
+      User.findOne({ where : {Email: email}}).then(function (user) {
+
+        // console.log("----I've come this far intot the passport.js SIGN IN");
+        // console.log(user);
 
         if (!user) {
           return done(null, false, { message: 'Email does not exist' });
         }
 
-        if (!isValidPassword(user.password,password)) {
+        if (!isValidPassword(user.Password,password)) {
           return done(null, false, { message: 'Incorrect password.' });
         }
 

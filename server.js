@@ -39,10 +39,11 @@ models.sequelize.sync().then(function() {
 });
 
 //load passport strategies
-require('./config/passport/passport.js')(passport, models.user);
+// console.log(models);
+require('./config/passport/passport.js')(passport, models.tblUsers);
 
 //Routes
-var authRoute = require('./routes/auth.js')(app, passport);
+require('./routes/auth.js')(app, passport);
 var routes = require('./controllers/main_controller.js');
 app.use('/', routes);
 

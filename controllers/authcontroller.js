@@ -7,7 +7,7 @@ exports.dashboard = function(req,res) {
   // console.log(req.user.landlord);
 
   var data = req.user;
-  if (req.user.landlord) {
+  if (data.Landlord) {
     res.render('dashboard-landlord', {data});
   } else {
     res.render('dashboard-tenant', {data});

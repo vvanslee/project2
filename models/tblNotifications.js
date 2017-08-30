@@ -1,12 +1,8 @@
 module.exports = function (sequelize, DataTypes) {
 
-    var Notifications = sequelize.define("Notifications", {
-        NoticeID: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true
-        },
-        PropID: {
+    var notifications = sequelize.define("tblNotifications", {
+        NotificationID: {type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true, allowNull: false},
+        PropertyID: {
             type: DataTypes.INTEGER,
             allowNull: false
         },
@@ -24,11 +20,10 @@ module.exports = function (sequelize, DataTypes) {
                 len: [10,10]
             }
         },
-        Posted: {
-            type: DataTypes.DATE
-        }
+        createdAt: {type: DataTypes.DATE, defaultValue: sequelize.literal('NOW()')},
+        updatedAt: {type: DataTypes.DATE, defaultValue: sequelize.literal('NOW()')}
     });
 
-    return Notifications;
+    return notifications;
 
 };

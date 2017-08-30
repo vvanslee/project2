@@ -18,7 +18,7 @@ fs
     return (file.indexOf(".") !== 0) && (file !== "index.js" && file !== "main_model.js");
   })
   .forEach(function(file) {
-    console.log("--fs.readdirSync.filter.forEach file: " + file); 
+    // console.log("--fs.readdirSync.filter.forEach file: " + file); 
     var model = sequelize.import(path.join(__dirname, file));
     db[model.name] = model;
   });

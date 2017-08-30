@@ -1,12 +1,8 @@
 module.exports = function (sequelize, DataTypes) {
     
-    var Worktickets = sequelize.define("Worktickets", {
-        WTID: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true
-        },
-        TenantID: {
+    var worktickets = sequelize.define("tblWorktickets", {
+        WorkticketID: {type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true, allowNull: false},
+        UserID: {
             type: DataTypes.INTEGER,
             allowNull: false,
         },
@@ -25,11 +21,10 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
-        Date: {
-            type: DataTypes.DATE
-        }
+        createdAt: {type: DataTypes.DATE, defaultValue: sequelize.literal('NOW()')},
+        updatedAt: {type: DataTypes.DATE, defaultValue: sequelize.literal('NOW()')}
     });
 
-   return Worktickets;
+   return worktickets;
    
 };
