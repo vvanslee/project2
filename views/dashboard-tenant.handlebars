@@ -3,91 +3,87 @@
     <span class="username">Welcome to the Tenant Dashboard, {{data.FirstName}}!</span>
 </div>
 
-  <h2>Tenant Dashboard</h2>
+<h2>Tenant Dashboard</h2>
 
-  <div class="testing-container">
-    <span>CSS is located in style.css, referenced in main.handlebars</span>
-    <span>'data' object is pulled from authcontroller.js</span>
-    <span>UserID [{{data.UserID}}] can be used to query data specific to {{data.UserName}} from other tables.</span>
-    <span>Query:</span>
-    <table>
-      <tr>
-        <th>WorkticketID</th>
-        <th>UserID</th>
-        <th>Subject</th>
-        <th>Message</th>
-        <th>Status</th>
-        <th>Start Date</th>
-      </tr>
-      {{#each qry}}<tr><td>{{this.WorkticketID}}</td><td>{{this.UserID}}</td><td>{{this.Subject}}</td><td>{{this.Message}}</td><td>{{this.Status}}</td><td>{{this.createdAt}}</td></tr>{{/each}}
-    </table>
-  </div>
+<div class="row">
 
-  <div class="row">
+  <div class="dashContainer">
+    <form id="dashForm">
+      <div class="btnContainer">
+        <a class="button" id="dashButton" href="javascript:showonlyone('worktickets');">Worktickets</a>
+        <a class="button" id="dashButton" href="javascript:showonlyone('notifications');">Notifications</a>
+        <a class="button" id="dashButton" href="#openModal">Lease</a>
+        <a class="button" id="dashButton" href="/logout">Logout</a>
+      </div>
+    </form>
 
-    <div class="dashContainer">
-      <form id="dashForm">
-        <div class="btnContainer">
-          <a class="button" id="dashButton" href="javascript:showonlyone('worktickets');">Worktickets</a>
-          <a class="button" id="dashButton" href="javascript:showonlyone('notifications');">Notifications</a>
-          <a class="button" id="dashButton" href="#openModal">Lease</a>
-          <a class="button" id="dashButton" href="/logout">Logout</a>
+    <div class="contentHolder">
+
+      <div class="newboxes" id="worktickets">
+        
+        <div class="tickets">
+          <table>
+            <tr>
+              <th>Workticket ID</th>
+              <th>UserID</th>
+              <th>Subject</th>
+              <th>Message</th>
+              <th>Status</th>
+            </tr>
+            {{#each qry}}<tr><td>{{this.WorkticketID}}</td><td>{{this.UserID}}</td><td>{{this.Subject}}</td><td>{{this.Message}}</td><td>{{this.Status}}</td></tr>{{/each}}
+          </table>
         </div>
-      </form>
 
-      <div class="contentHolder">
-
-        <div class="newboxes" id="worktickets">
-          <div class="tickets">
-            WORKTICKETS
-          </div>
-          
-          <div class="createTicket">
-            <center><h1 class="ticketHeader">CREATE A WORKTICKET</h1></center>
-            <form id="ticketForm">
+        <div class="createTicket">
+          <form id="ticketForm">
+            <div class="form-group">
+              <label class="title" for="title">Title:</label>
+              <input type="text" class="form-control" id="title">
+              <br />
+              <label for="body">Describe the problem:</label>
+              <textarea class="form-control" rows="10" id="body"></textarea>
               <div class="form-group">
-                <label class="title" for="title">Title:</label>
-                <input type="text" class="form-control" id="title">
-                <br />
-                <label for="body">Describe the problem:</label>
-                <textarea class="form-control" rows="10" id="body"></textarea>
-                <div class="form-group">
-                  <label for="category">Select Category:</label>
-                  <select class="form-control" id="category">
-                    <option value="Maintainence">Maintainence</option>
-                    <option value="Miscellaneous">Miscellaneous</option>
-                  </select>
-                </div>
-                <br />
-                <button type="submit" class="btn btn-success submit">Submit</button>
+                <label for="category">Select Category:</label>
+                <select class="form-control" id="category">
+                  <option value="Maintainence">Maintainence</option>
+                  <option value="Miscellaneous">Emergency</option>
+                  <option value="Miscellaneous">Miscellaneous</option>
+                </select>
               </div>
-            </form>
-          </div>
-
-        </div>
-
-        <div class="newboxes" id="notifications">
-          NOTIFICATIONS
+              <br />
+              <button type="submit" class="btn btn-success submit">Submit</button>
+            </div>
+          </form>
         </div>
 
       </div>
 
+      <div class="newboxes" id="notifications">
+        <div class="notifications">
+          <table>
+            <tr>
+              <th>Notification ID</th>
+              <th>Message</th>
+              <th>Status</th>
+              <th>Date Created</th>
+            </tr>
+          </table>
+        </div>
+      </div>
+
     </div>
+
   </div>
 
+</div>
 
-
-
-    <div id="openModal" class="modalDialog">
-      <div>	<a href="#close" title="Close" class="close">X</a>
+<div id="openModal" class="modalDialog">
+  <div>	<a href="#close" title="Close" class="close">X</a>
   
-          <iframe class="lease" src="static/images/illinois-residential-lease-agreement.pdf"></iframe>
+    <iframe class="lease" src="static/images/illinois-residential-lease-agreement.pdf"></iframe>
   
-      </div>
-    </div>
-
- 
-  
+  </div>
+</div>
 
 <script>
 
@@ -95,12 +91,6 @@
       $('.newboxes').each(function(index) {
             if ($(this).attr("id") == thechosenone) {
                 $(this).show();
-
-                if($(this).attr("id") === "worktickets") {
-                  // Do nothing
-                } else {
-                  window.location.href= "/dashboard/" + $(this).attr("id");
-                }
             }
             else {
                 $(this).hide();
