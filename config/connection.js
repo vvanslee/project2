@@ -7,6 +7,17 @@ var connection = mysql.createConnection({
   password: 'Jacob0429',
   database:'kubo_db'
 }); 
+
+if (process.env.JAWSDA_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'Jacob0429',
+    database: 'kubo_db'
+  });
+};
  
 module.exports = connection;
 
