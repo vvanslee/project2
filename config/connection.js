@@ -4,7 +4,7 @@ var connection = mysql.createConnection({
   host:'localhost',
   port: 3306, // Must be different from client port (e.g., 3000)
   user:'root',
-  password: '',
+  password: 'Jacob0429',
   database:'kubo_db'
 }); 
  
