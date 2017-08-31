@@ -1,12 +1,12 @@
 var mysql = require('mysql');
 
-var connection = mysql.createConnection({
-  host:'localhost',
-  port: 3306, // Must be different from client port (e.g., 3000)
-  user:'root',
-  password: 'Jacob0429',
-  database:'kubo_db'
-}); 
+// var connection = mysql.createConnection({
+//   host:'localhost',
+//   port: 3306, // Must be different from client port (e.g., 3000)
+//   user:'root',
+//   password: 'Jacob0429',
+//   database:'kubo_db'
+// }); 
 
 if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.env.JAWSDB_URL);
