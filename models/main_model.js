@@ -4,6 +4,41 @@ console.log(" Made it to main_model.js");
 
 // Call the ORM functions using specific input for the ORM
 var mapping = {
+  // toLandlord: function(wt, nt) {
+  toLandlord: function(cb) {
+    // console.log("main_model.js toLandlord initiated");
+    orm.showLandlord(true, function(res){
+      // console.log("-----res[0]--------");
+      // console.log(res[0]);
+      cb([res[0], res[1]]);
+    });
+  },
+  toTenant: function(cb) {
+    // console.log("main_model.js toTenant initiated");
+    orm.showTenant(false, function(res){
+      // console.log("-----res[0]--------");
+      // console.log(res[0]);
+      cb([res[0], res[1]]);
+    });
+  },
+  
+  pushWorkticket: function(ID, subject, message, category, cb) {
+    // console.log("main_model.js toLandlord initiated");
+    orm.addWorkticket(ID, subject, message, category, function(res){
+      // console.log("-----res[0]--------");
+      // console.log(res[0]);
+      cb([res[0], res[1]]);
+    });
+  },
+  pushNotification: function(ID, property, message, expires, category, cb) {
+    // console.log("main_model.js toTenant initiated");
+    orm.addNotification(ID, property, message, expires, category, function(res){
+      // console.log("-----res[0]--------");
+      // console.log(res[0]);
+      cb([res[0], res[1]]);
+    });
+  },
+
   toWorktickets: function(cb) {
     console.log("main_model.js toWorktickets initiated");
     orm.showWorktickets("tblWorktickets", function(res){

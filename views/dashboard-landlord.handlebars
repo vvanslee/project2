@@ -29,21 +29,21 @@
               <th>Message</th>
               <th>Status</th>
             </tr>
-            {{#each qry}}<tr><td>{{this.WorkticketID}}</td><td>{{this.UserID}}</td><td>{{this.Subject}}</td><td>{{this.Message}}</td><td>{{this.Status}}</td></tr>{{/each}}
+            {{#each wt}}<tr><td>{{this.WorkticketID}}</td><td>{{this.UserID}}</td><td>{{this.Subject}}</td><td>{{this.Message}}</td><td>{{this.Status}}</td></tr>{{/each}}
           </table>
         </div>
  
         <div class="createTicket">
-          <form id="ticketForm">
+          <form id="ticketForm" name="ticketForm" method="post" action="/push-workticket">
             <div class="form-group">
               <label class="title" for="title">Title:</label>
-              <input type="text" class="form-control" id="title">
+              <input type="text" class="form-control" id="title" name="subject">
               <br />
               <label for="body">Describe the problem:</label>
-              <textarea class="form-control" rows="10" id="body"></textarea>
+              <textarea class="form-control" rows="10" id="body" name="message"></textarea>
               <div class="form-group">
                 <label for="category">Select Category:</label>
-                <select class="form-control" id="category">
+                <select class="form-control" id="category" name="category">
                   <option value="Maintainence">Maintainence</option>
                   <option value="Miscellaneous">Emergency</option>
                   <option value="Miscellaneous">Miscellaneous</option>
@@ -60,27 +60,39 @@
       <div class="newboxes" id="notifications">
 
         <div class="notifications">
-          <table>
+          {{!-- <table>
             <tr>
               <th>Notification ID</th>
               <th>Message</th>
               <th>Status</th>
               <th>Date Created</th>
             </tr>
+          </table> --}}
+          <table>
+            <tr>
+              <th>NotificationID</th>
+              <th>PropertyID</th>
+              <th>Message</th>
+              <th>Expiration</th>
+              <th>Created</th>
+            </tr>
+            {{#each nt}}<tr><td>{{this.NotificationID}}</td><td>{{this.PropertyID}}</td><td>{{this.Message}}</td><td>{{this.Expiration}}</td><td>{{this.createdAt}}</td></tr>{{/each}}
           </table>
         </div>
 
         <div class="createNotification">
-          <form id="notificationForm">
+          <form id="notificationForm" name="notificationForm" method="post" action="/push-notification">
             <div class="form-group">
-              <label class="title" for="title">Notification Headline:</label>
-              <input type="text" class="form-control" id="title">
+              <label class="title" for="title">Property:</label>
+              <input type="text" class="form-control" id="title" name="property">
               <br />
               <label for="body">Message:</label>
-              <textarea class="form-control" rows="10" id="body"></textarea>
+              <textarea class="form-control" rows="10" id="body" name="message"></textarea>
+              <label class="title" for="expires">Expected Completion:</label>
+              <input type="date" class="form-control" id="expires" name="expires">
               <div class="form-group">
                 <label for="category">Select Category:</label>
-                <select class="form-control" id="category">
+                <select class="form-control" id="category" name="category">
                   <option value="Maintainence">Maintainence</option>
                   <option value="Miscellaneous">Emergency</option>
                   <option value="Miscellaneous">Miscellaneous</option>

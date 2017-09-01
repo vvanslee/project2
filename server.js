@@ -31,9 +31,44 @@ app.use(passport.session()); // persistent login sessions
 
 //Models
 var models = require("./models");
+
 //Sync Database
 models.sequelize.sync().then(function() {
-    console.log('Database synchronized flawlessly.');
+  // console.log(models.tblUsers);
+  // console.log(models.sequelize.models);
+  // var i = 0;
+  // models.tblUsers.findAll({ 
+  //   where: {
+  //     UserID: {
+  //       $gt: 0
+  //     }
+  //   }
+  // }).then(projects => {
+  //   // console.log(projects.length);
+  //   i = projects.length;
+  //   // console.log("i = " + i);
+  //   if (i === 0) {
+  models.tblUsers.findAndCountAll().then(data => {
+    if(data.count===0){
+      // Preload records from the 'seeds.sql' file in the 'db' directory
+      models.sequelize.query("INSERT INTO tblWorktickets (UserID, Subject, Message, Status) VALUES (1, 'Plumbing', 'Hot water not working...', 'Open');");
+      models.sequelize.query("INSERT INTO tblWorktickets (UserID, Subject, Message, Status) VALUES (1, 'What is that smell?', 'I think the sewer main may have busted.', 'Open');");
+      models.sequelize.query("INSERT INTO tblWorktickets (UserID, Subject, Message, Status) VALUES (6, 'Emergency', 'Building is on fire!', 'Pending');");
+      models.sequelize.query("INSERT INTO tblWorktickets (UserID, Subject, Message, Status) VALUES (4, 'Cabinet Door', 'I simply opened the cabinet door and it fell apart. Can you send someone to fix it?', 'Closed');");
+      models.sequelize.query("INSERT INTO tblProperties (PropertyName, Address, City, State, Zipcode) VALUES ('The Grand Budapest Hotel', '555 Zubrowka Rd', 'Anaheim', 'CA', '92807');");
+      models.sequelize.query("INSERT INTO tblProperties (PropertyName, Address, City, State, Zipcode) VALUES ('Roach Motel', '999 Nigh Lane', 'Miami', 'FL', '33111');");
+      models.sequelize.query("INSERT INTO tblProperties (PropertyName, Address, City, State, Zipcode) VALUES ('LSD Trailer Park', '3950 Lagoon Side Dr', 'Posey', 'IL', '62231');");
+      models.sequelize.query("INSERT INTO tblUsers (UserName, FirstName, LastName, Email, Password, Landlord) VALUES ('MrFish', 'Calvin', 'Fishoeder', 'cfishoeder@jersey.com', '$2a$08$YyiNm/Lob2u4o8sXyBYVGOVPy8k0zxV4WFUQ4C1NO3r6UUVg67lBa', 1);");
+      models.sequelize.query("INSERT INTO tblUsers (UserName, FirstName, LastName, Email, Password, Landlord) VALUES ('BBelcher', 'Bob', 'Belcher', 'bbelcher@jersey.com', '$2a$08$eu8hwrGbgST3lelCeH/f4uIlWpfDZQXPiyAhioYkJeK2T3wujACO2', 0);");
+      models.sequelize.query("INSERT INTO tblUsers (UserName, FirstName, LastName, Email, Password, Landlord) VALUES ('Teddified', 'Teddy', 'Johnson', 'teddy@sbcglobal.com', '$2a$08$XkOf7fK1BwLhk4k1K1d0MO85q/GVUN1HliNrLM0ilzfcjXJy4ci/C', 0);");
+      models.sequelize.query("INSERT INTO tblUsers (UserName, FirstName, LastName, Email, Password, Landlord) VALUES ('scrooge1', 'Scrooge', 'McDuck', 'scrooge@mcduck.org', '$2a$08$PblF7ZQSOrJaGDdma79RLOpRBPumqld2vBtVgJU1BwC6P3dcpUUxO', 1);");
+      models.sequelize.query("INSERT INTO tblUsers (UserName, FirstName, LastName, Email, Password, Landlord) VALUES ('daffy1', 'Daffy', 'Duck', 'daff@duck.net', '$2a$08$wwTmeLDc9ST8XbGntlcNE.tI05.j5u.AaQbnsxxG0XtHUYKz8TXNe', 0);");
+      models.sequelize.query("INSERT INTO tblNotifications (PropertyID, Message, Expiration) VALUES (1, 'Renovations will commence', '2016-11-12');");
+      models.sequelize.query("INSERT INTO tblNotifications (PropertyID, Message, Expiration) VALUES (2, 'Fumigation has been delayed', '2176-11-05');");
+      models.sequelize.query("INSERT INTO tblNotifications (PropertyID, Message, Expiration) VALUES (3, 'Water Shutoff will be building wide', '2017-09-23');");
+    }
+  });
+  console.log('--------------------Database synchronized flawlessly--------------------');
 }).catch(function(err) {
     console.log(err, "Database encountered an error while synchronizing.");
 });

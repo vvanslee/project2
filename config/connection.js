@@ -1,20 +1,23 @@
 var mysql = require('mysql');
 
-var connection = mysql.createConnection({
-  host:'localhost',
-  port: 3306, // Must be different from client port (e.g., 3000)
-  user:'root',
-  password: 'Jacob0429',
-  database:'kubo_db'
-}); 
+// var connection = mysql.createConnection({
+//   host:'localhost',
+//   port: 3306, // Must be different from client port (e.g., 3000)
+//   user:'root',
+//   password: '',
+//   database:'kubo_db'
+// }); 
+
+var connection;
 
 if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
   connection = mysql.createConnection({
     host: 'localhost',
+    port: 3306,
     user: 'root',
-    password: 'Jacob0429',
+    password: 'fml!Ypplsuc15',
     database: 'kubo_db'
   });
 };
