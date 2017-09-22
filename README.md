@@ -13,4 +13,6 @@ Sequelize
 Skeleton.css
 Passport
 
+Click image below for demo.
+
 [![KUBO](https://i.imgur.com/JzAJjS1.png)](https://www.youtube.com/watch?v=PykBb5xnr4M&feature=youtu.be "KUBO")
