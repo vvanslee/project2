@@ -1,12 +1,8 @@
 module.exports = function (sequelize, DataTypes) {
 
-    var Properties = sequelize.define("Properties", {
-        PropID: {
-            type: DataTypes.INT,
-            allowNull: false,
-            primaryKey: TRUE
-        },
-        PropName: {
+    var properties = sequelize.define("tblProperties", {
+        PropertyID: {type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true, allowNull: false},
+        PropertyName: {
             type: DataTypes.STRING,
             allowNull: false,
         },
@@ -23,13 +19,15 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
         },
         Zipcode: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             validate: {
                 len: [5,5]
             }
-        }
+        },
+        createdAt: {type: DataTypes.DATE, defaultValue: sequelize.literal('NOW()')},
+        updatedAt: {type: DataTypes.DATE, defaultValue: sequelize.literal('NOW()')}
     });
 
-    return Properties;
+    return properties;
     
 };

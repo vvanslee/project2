@@ -1,0 +1,37 @@
+/* body {
+  background: skyblue;
+}
+
+#title-block {
+  display: block;
+  text-align: center;
+  margin: 25px auto;
+}
+
+.titlePicture {
+  height: 300px;
+  border-radius: 15px;
+}
+
+.ink {
+  color: black;
+} */
+
+.testing-container {
+  z-index: 9000;
+  border: 2px solid black;
+  right: 1%;
+  top: 10%;
+  height: 400px;
+  width: 50%;
+  position: fixed;
+  display: block;
+}
+
+.testing-container span {
+  position: relative;
+  display: block;
+  font-size: 10px;
+  margin-left: 5px;
+
+}

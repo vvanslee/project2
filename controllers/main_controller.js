@@ -6,26 +6,35 @@ console.log("Made it to main_controller.js");
 
 router.get('/', function(req,res) {
   console.log("main_controller.js - router.get(/)");
-  mmodel.toWorktickets(function(data){
-    res.render('index', {data});
-  });
+  res.render('index');
+  // mmodel.toWorktickets(function(data){
+  //   res.render('index', {data});
+  // });
 });
 
-router.post('/tenant', function(req, res){
+//Creates a security breach
+// router.get('/dashboard-landlord', function(req,res) {
+//   console.log("--------main_controller.js - router.get(/)");
+//   mmodel.toWorktickets(function(data){
+//     console.log(data);
+//   });
+// });
+
+/* router.get('/tenant-signin', function(req, res){
   console.log(req.body.id);
   mmodel.toTenant(function(data){
-    console.log(data);
-    res.render('ten', {data});
+    // console.log(data);
+    res.render('tenant-signin', {data});
     // res.redirect('/tenant');
   });
 });
 
-router.post('/landlord', function(req, res) {
+router.get('/landlord-signin', function(req, res) {
   mmodel.toLandlord(function(data){
-    console.log(data);
-    res.render('lan', {data});
+    // console.log(data);
+    res.render('landlord-signin', {data});
     // res.redirect('/landlord');
   });
-}); 
+});  */
 
 module.exports = router;

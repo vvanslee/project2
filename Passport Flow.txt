@@ -1,0 +1,17 @@
+Passport Flow
+
+server.js:
+	app.set('views', './app/views')
+		-nothing
+	require("./app/models");
+		index.js
+		require(path.join(__dirname, '..', 'config', 'config.json'))[env];
+	user.js
+		-sequelize
+	require('./app/routes/auth.js')(app, passport);
+		require('../controllers/authcontroller.js');
+			-exports rendering and redirection
+	require('./app/config/passport/passport.js')(passport, models.user);
+		require('bcrypt-nodejs');
+		require('passport-local').Strategy;
+		

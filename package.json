@@ -1,27 +1,33 @@
 {
-  "name": "project2",
+  "name": "kubo",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "NW Second Project",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.17.2",
+    "dotenv": "^4.0.0",
     "express": "^4.15.4",
     "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.0",
     "method-override": "^2.3.9",
-    "body-parser": "^1.17.2",
-    "mysql": "^2.14.1"
+    "mysql": "^2.14.1",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "sequelize": "^3.30.1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shaunacurran/project2.git"
+    "url": "https://github.com/atflowers/project2"
   },
+  "author": "",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/shaunacurran/project2/issues"
+    "url": "https://github.com/atflowers/project2"
   },
-  "homepage": "https://github.com/shaunacurran/project2#readme",
-  "description": ""
+  "homepage": "https://github.com/atflowers/project2"
 }

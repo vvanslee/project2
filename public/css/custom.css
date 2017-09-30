@@ -1,0 +1,438 @@
+/*table {
+    background-color: #E4F7FF;
+    text-align: center;
+    max-width: 90%;
+    border-radius: 10px;
+    height: 300px;
+    position: relative !important;
+    float: right !important;
+    margin-bottom: -60px !important;
+    margin-top: 44px !important;
+    margin-right: 100px !important;
+    z-index: 40 !important;
+}*/
+
+.main {
+    height: 550px;
+    clear: both;
+    margin-top: 20px;
+    display: block;
+}
+
+.leader {
+    height: 659px;
+    background-image: url(public/images/main.png);
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 21;
+    clear: both;
+}
+
+.sidebar_spaced {
+    clear: both;
+    height: auto;
+    position: relative;
+}
+
+
+
+.image-container {
+    height: auto;
+    position: relative;
+}
+
+.loginMainPage {
+    height: 100%;
+    width: 100%;
+}
+
+
+.banner {
+    display: block;
+    height: 450px;
+}
+
+/*--------------------------
+    DASHBOARD STYLES
+--------------------------*/
+
+.dashContainer {
+    height: 80%;
+    width: 100%;
+    padding: 0;
+    position: absolute;
+    background: #ffffff;
+    z-index: 100;
+}
+
+form#dashForm {
+    height: 100%;
+    width: 300px;
+    display: table;
+    margin: 0 0 0 10% !important;
+    float: left !important;
+    border-radius: 0 20px 20px 0;
+}
+
+.btnContainer {
+    width: 100%;
+    height: 20%;
+    display: table-cell;
+    vertical-align: bottom;
+}
+#dashButton {
+    width: 100%;
+    border-radius: 0;
+    margin: 0 !important;
+    border-right-width: 0;
+    border-left-width: 0;
+    border-bottom-width: 0;
+}
+
+.newboxes {
+    display: none;
+}
+
+.dashContainer {
+    height: 80%;
+    width: 100%;
+    margin: 0 10% 0 10%;
+    padding: 0;
+    position: absolute;
+    background: #ffffff;
+    z-index: 99;
+}
+
+form#dashForm {
+    height: 100%;
+    width: 15%;
+    margin: 0 !important;
+    display: table;
+    float: left !important;
+    border-radius: 0 20px 20px 0;
+}
+.btnContainer {
+    width: 100%;
+    height: 20%;
+    display: table-cell;
+    vertical-align: bottom;
+}
+
+#dashButton {
+    width: 100%;
+    border-radius: 0;
+    margin: 0 !important;
+    border-right-width: 0;
+    border-left-width: 0;
+    border-bottom-width: 0;
+}
+
+.contentHolder {
+    background-color: #f2f2f2;
+    width: 80%;
+    height: 100%;
+    border-radius: 0 20px 20px 0;
+}
+
+#worktickets {
+    background-color: #f2f2f2;
+    width: 100%;
+    height: 100%;
+    border-radius: 0 20px 20px 0;
+}
+
+.newboxes {
+    display: none;
+}
+
+.modalDialog {
+    position: fixed;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #f2f2f2;
+    z-index: 99999;
+    opacity: 0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+.tickets {
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+}
+
+.createTicket {
+    width: 20%;
+    height: 100%;
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 25px;
+    float: right;
+}
+
+.ticketHeader {
+    font-family: ‘Encode Sans Semi Condensed’, sans-serif;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+#ticketForm {
+    width: 100%;
+    height: 90%;
+    margin: 0 !important;
+    clear: both;
+}
+#notificationForm {
+    width: 100%;
+    height: 90%;
+    margin: 0 !important;
+    clear: both;
+}
+
+label {
+    margin-top: 20px;
+}
+/* textarea.form-control {
+    height: 30%;
+} */
+.form-control {
+    width: 90%;
+}
+.notifications {
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+}
+.createNotification {
+    width: 20%;
+    height: 100%;
+    display: inline-block;
+    margin-top: 20px;
+    float: right;
+    margin-right: 25px;
+}
+
+
+/*----------------------------
+    END DASH STYLES
+----------------------------*/
+
+table {
+    background-color: #f2f2f2 !important;
+    text-align: center;
+    width: 100%;
+    border-radius: 10px;
+    height: 80%;
+    margin: 5% 0 0 40px !important;
+    z-index: 40 !important;
+    padding: 0 !important;
+    float: left !important;
+    font-family: ‘Roboto’, sans-serif;
+    font-size: 14px;
+}
+
+.main {
+    height: 550px;
+    clear: both;
+    margin-top: 20px;
+    display: block;
+}
+
+.leader {
+    height: 659px;
+    background-image: url(public/images/maincopy.png);
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 21;
+    clear: both;
+}
+
+.sidebar_spaced {
+    clear: both;
+    height: auto;
+    position: relative;
+}
+
+
+.image-container {
+    height: auto;
+    position: relative;
+}
+
+.banner {
+    display: block;
+    height: 450px;
+}
+
+.wifi {
+    max-width: 35%;
+}
+
+.docs {
+    max-width: 35%;
+   
+}
+
+.announcements {
+    max-width: 35%;
+    
+}
+
+h6{
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Encode Sans', sans-serif;
+}
+
+.logo {
+    max-width: 9%;
+    
+}
+
+.nav {
+    background-color: #ffffff;
+    padding: 10px;
+    height: 40px;
+    top: 0;
+}
+
+/* .navRegister {
+    float: right;
+    margin-right: 5px;
+    color: #ffffff !important;
+    background-color: #33C3F0 !important;
+    border-color: #33C3F0;
+}
+
+.navSignin {
+    float: right;
+    margin-right: 40px;
+    background-color: #33C3F0 !important;
+    border-color: #33C3F0 !important;
+} */
+
+
+
+.landlord {
+    position: relative !important;
+    float: right !important;
+    max-width: 100%;
+   
+}
+
+.landlord-container {
+    padding: 0;
+    margin-top: 35px;
+    margin-bottom: 20px;
+    background-color: #F2F2F2;
+}
+
+h5 {
+    text-align: right;
+    font-size: 20px;
+    font-weight: lighter;
+    font-family: 'Encode Sans', sans-serif;
+}
+
+.content {
+    margin: 40px;
+}
+
+.tenant {
+    position: relative !important;
+    float: left !important;
+    padding: 0;
+    max-width: 100%;
+}
+
+
+#signin {
+    width: 350px;
+    /* top: -30px; */
+    height: 515px !important ;
+}
+
+.contactUs {
+    width: 600px;
+}
+
+#signup {
+    width: 350px;
+    top: -10px;
+    height: 515px !important;
+}
+
+.username{
+    float: right;
+    margin-right: 30px;
+}
+
+/*---------------------
+    MODAL STYLES 
+---------------------*/
+
+.modalDialog {
+    position: fixed;
+    height:100%;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #8eb9ce;
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+
+.lease {
+    top: 0;
+  
+    width: 740px;
+    height: 500px;
+}
+.modalDialog:target {
+    opacity:0.9;
+    height: 100%;
+    pointer-events: auto;
+}
+.modalDialog > div {
+    width: 740px;
+    height: 500px;
+    position: relative;
+    margin: 10% auto;
+    background: #8eb9ce;
+}
+.close {
+    background: #606061;
+    color: #FFFFFF;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    -webkit-border-radius: 12px;
+}
+.close:hover {
+    background: #8eb9ce;
+}
+
+/*---------------------
+    END MODAL 
+---------------------*/
+

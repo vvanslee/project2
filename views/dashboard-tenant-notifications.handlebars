@@ -1,0 +1,71 @@
+<div class = "nav">
+    <img class = "logo" src = "static/images/kubologo.png">
+    <span class="username">Welcome to the Tenant Dashboard, {{data.FirstName}}!</span>
+</div>
+
+  <h2>Tenant Dashboard</h2>
+  
+  <div class="testing-container">
+    <span>CSS is located in style.css, referenced in main.handlebars</span>
+    <span>'data' object is pulled from authcontroller.js</span>
+    <span>UserID [{{data.UserID}}] can be used to query data specific to {{data.UserName}} from other tables.</span>
+    <span>Query:</span>
+    <table>
+      <tr>
+        <th>NotificationID</th>
+        <th>PropertyID</th>
+        <th>Message</th>
+        <th>Expiration</th>
+        <th>Created</th>
+      </tr>
+      {{#each qry}}<tr><td>{{this.NotificationID}}</td><td>{{this.PropertyID}}</td><td>{{this.Message}}</td><td>{{this.Expiration}}</td><td>{{this.createdAt}}</td></tr>{{/each}}
+    </table>
+  </div>
+
+  <div class="row">
+
+      <div class="dashContainer">
+        <form id="dashForm">
+          <div class="btnContainer">
+            <a class="button" id="dashButton" href="javascript:showonlyone('worktickets');">Worktickets</a>
+            <a class="button" id="dashButton" href="javascript:showonlyone('notifications');">Manage Notifications</a>
+            <a class="button" id="dashButton" href="javascript:showonlyone('properties');">Manage Properties</a>
+            <a class="button" id="dashButton" href="/logout">Logout</a>
+          </div>
+        </form>
+
+        <div class="newboxes" id="worktickets">
+          <table>
+            <tr>
+              <th>NotificationID</th>
+              <th>PropertyID</th>
+              <th>Message</th>
+              <th>Expiration</th>
+              <th>Created</th>
+            </tr>
+            {{#each qry}}<tr><td>{{this.NotificationID}}</td><td>{{this.PropertyID}}</td><td>{{this.Message}}</td><td>{{this.Expiration}}</td><td>{{this.createdAt}}</td></tr>{{/each}}
+          </table>
+        </div>
+        <div class="newboxes" id="notifications">NOTIFICATIONS</div>
+        <div class="newboxes" id="properties">PROPERTIES</div>
+
+      </div>
+
+
+
+  </div>
+
+<script>
+
+  function showonlyone(thechosenone) {
+      $('.newboxes').each(function(index) {
+            if ($(this).attr("id") == thechosenone) {
+                $(this).show(200);
+            }
+            else {
+                $(this).hide(600);
+            }
+      });
+  }
+
+</script>
